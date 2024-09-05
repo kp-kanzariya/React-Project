@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import AppJson from "./json3/App";
 // import AppRoute from "./routing/App";
 // import AppModal from "./modalDialogue29/App";
 // import AppHook from "./hooksIntro20/App";
@@ -94,7 +95,10 @@ function App() {
       {/* <AppModal/> */}
 
       {/* Routing Links Navigation  */}
-        {/* <AppRoute/> */}
+      {/* <AppRoute/> */}
+      
+      {/* Json server  */}
+      <AppJson/>
     </div>
   );
 }

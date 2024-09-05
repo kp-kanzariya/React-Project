@@ -1,28 +1,36 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react"; // Import necessary React hooks
 
 function ModalDialog({ x, children }) {
+  // Create a reference to access the dialog element
   const diaRef = useRef();
+
   useEffect(() => {
+    // Access the current dialog element
     const dialog = diaRef.current;
 
-    if (!x)
-         {
-        return;
-    }
-     else {
-        dialog.showModal();
+    // Check if 'x' is false, do nothing and return early
+    if (!x) {
+      return;
+    } else {
+      // If 'x' is true, show the modal dialog
+      dialog.showModal();
     }
 
-    return()=>{
-        dialog.close();
-    }
-    
-  });
+    // Cleanup function to close the dialog when component unmounts or 'x' changes
+    return () => {
+      dialog.close();
+    };
+
+  }, [x]); // Dependency array, effect will run when 'x' changes
+
   return (
     <div>
-      <dialog ref={diaRef}>{children}</dialog>
+      {/* Render the dialog element with a reference */}
+      <dialog ref={diaRef}>
+        {children} {/* Render the children inside the dialog */}
+      </dialog>
     </div>
   );
 }
 
-export default ModalDialog;
+export default ModalDialog; // Export the ModalDialog component
