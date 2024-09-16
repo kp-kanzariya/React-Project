@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   const [users, setUsers] = useState([]);
+  const [searchText, setSearch] = useState(""); // State for search term
 
   useEffect(() => {
     fetch("http://localhost:5005/users")
@@ -12,17 +13,28 @@ function Home() {
 
   // Filter to remove students with empty names and check for duplicate emails
   const filteredUsers = users
-    .filter((user) => user.name.trim() !== "") // Skip students with empty names//if the name property of each student is not just whitespace.
+    .filter((user) => user.name.trim() !== "") // Skip empty names
     .filter(
       (user, index, self) =>
-        index === self.findIndex((s) => s.email === user.email) // Ensure unique emails// if the current student's index is the same as the index of the first occurrence of their email.
-    );
+        index === self.findIndex((s) => s.email === user.email) // Unique emails
+    )
+    .filter((user) => user.name.toLowerCase().includes(searchText.toLowerCase())); // Filter based on search text
+
   return (
     <div className="container bg-info p-4 rounded">
       <h2>User List</h2>
       <Link to="/register" className="btn btn-primary mb-3">
         Register/Add User
       </Link>
+
+      <input
+        type="text"
+        className="form-control mb-3"
+        placeholder="Search by name..."
+        value={searchText}
+        onChange={(e) => setSearch(e.target.value)} // Update search text
+      />
+
       <table className="table ">
         <thead>
           <tr>
@@ -32,8 +44,7 @@ function Home() {
           </tr>
         </thead>
         <tbody>
-          {/* {filteredUsers.map((user)=>( */}
-          {users.map((user) => (
+          { filteredUsers.map((user) => (
             <tr key={user.id}>
               <td>{user.name}</td>
               <td>{user.email}</td>

@@ -1,11 +1,13 @@
 import { useState } from "react";
-import "./App.css";
-import UseeffRestric from "./test/UseeffRestric";
-
+// import "./App.css";
+// import SearchComponent from "./json-server5/Searchtext";
+// import UseeffRestric from "./test/UseeffRestric";
+import Index from "./BookingProject/Index";
+import LazyLoad from "./test/LazyLoad";
 // import AppJsonCrud from "./json-server5/App";
 // import Facto from "./test/Facto";
 // import AppJson from "./json3/App";
-// import AppRoute from "./routing/App";
+import AppRoute from "./routing/App";
 // import AppModal from "./modalDialogue29/App";
 // import AppHook from "./hooksIntro20/App";
 // import AppChat from "./chatApp27/App";
@@ -41,7 +43,7 @@ function App() {
   // }
 
   return (
-    <div className="App">
+    <div >
       {/* Function Componets */}
       {/* HI {x}
        <Fun/>
@@ -104,8 +106,14 @@ function App() {
       {/* Json server  */}
       {/* <AppJson/> */}
       {/* <AppJsonCrud /> */}
+
       {/* <Facto/> */}
-      <UseeffRestric/>
+      {/* <UseeffRestric/> */}
+      {/* <SearchComponent/> */}
+
+        <LazyLoad/>
+
+      {/* <Index/> */}
     </div>
   );
 }
