@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import CardComp from "./CardComp";
+import { DateRangePicker } from "react-date-range";
+import { DateRange } from "react-date-range";
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
 
 export default function Header() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [showDatePicker, setShowDatePicker] = useState(false); // For controlling the visibility of date picker
+  const [state, setState] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
+
   return (
     <div>
       <div className="container-fluid bg-primary">
@@ -76,7 +90,7 @@ export default function Header() {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              {/* <span class="navbar-toggler-icon"></span> */}
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
@@ -122,19 +136,42 @@ export default function Header() {
           <div class="container">
             <div class="row">
               <div class="col-md-3 my-2">
-                <input type="text" class="form-control" placeholder="Morjim" />
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Morjim"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
               </div>
               <div class="col-md-3">
-                <div class="input-group">
-                  <div class="input-group-text my-2">
-                    <i class="fa-solid fa-calendar-days"></i>
+                <div
+                  className="input-group"
+                  onClick={() => setShowDatePicker(!showDatePicker)} // Toggle the visibility of DateRange picker
+                  style={{ cursor: "pointer" }}
+                >
+                  <div className="input-group-text my-2">
+                    <i className="fa-solid fa-calendar-days"></i>
                   </div>
                   <input
-                    type="date"
-                    class="form-control my-2 "
+                    type="text"
+                    className="form-control my-2"
                     placeholder="Check-in date - Check-out date"
+                    readOnly
+                    value={`${state[0].startDate.toLocaleDateString()} - ${state[0].endDate.toLocaleDateString()}`}
                   />
                 </div>
+
+                {/* Conditionally show the DateRange picker */}
+                {showDatePicker && (
+                  <DateRange
+                    editableDateInputs={true}
+                    onChange={(item) => setState([item.selection])}
+                    moveRangeOnFirstSelection={false}
+                    ranges={state}
+                    className="mt-2"
+                  />
+                )}
               </div>
               <div class="col-md-3 my-2">
                 <select class="form-select">
@@ -149,7 +186,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <CardComp/>
+      <CardComp searchTerm={searchTerm} />
     </div>
   );
 }

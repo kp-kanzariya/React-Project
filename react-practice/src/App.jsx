@@ -1,24 +1,32 @@
 import { useState } from "react";
-// import "./App.css";
-// import SearchComponent from "./json-server5/Searchtext";
-// import UseeffRestric from "./test/UseeffRestric";
+import "./App.css";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import SearchComponent from "./json-server5/Searchtext";
+import UseeffRestric from "./test/UseeffRestric";
 import Index from "./BookingProject/Index";
 import LazyLoad from "./test/LazyLoad";
-// import AppJsonCrud from "./json-server5/App";
-// import Facto from "./test/Facto";
-// import AppJson from "./json3/App";
+import AppJsonCrud from "./json-server5/App";
+import Facto from "./test/Facto";
+import AppJson from "./json3/App";
 import AppRoute from "./routing/App";
-// import AppModal from "./modalDialogue29/App";
-// import AppHook from "./hooksIntro20/App";
-// import AppChat from "./chatApp27/App";
-// import Apps from "./todoAppCRUD15/App";
-// import BooleanStateEx from "./boolState10/BooleanStateEx";
-// import MOuseMOveState from "./boolState10/MOuseMOveState";
-// import NestedObjState from "./boolState10/NestedObjState";
-// import NestedObjState1 from "./boolState10/NestedObjState1";
-// import NumberStateEx from "./boolState10/NumberStateEx";
-// import ArrayState from "./boolState10/ArrayState";
-// import Test from "./classFunctionState/DusriJSFile";
+import AppModal from "./modalDialogue29/App";
+import AppHook from "./hooksIntro20/App";
+import AppChat from "./chatApp27/App";
+import Apps from "./todoAppCRUD15/App";
+import BooleanStateEx from "./boolState10/BooleanStateEx";
+import MOuseMOveState from "./boolState10/MOuseMOveState";
+import NestedObjState from "./boolState10/NestedObjState";
+import NestedObjState1 from "./boolState10/NestedObjState1";
+import NumberStateEx from "./boolState10/NumberStateEx";
+import ArrayState from "./boolState10/ArrayState";
+import Test from "./classFunctionState/DusriJSFile";
+import DatePick from "./test/DatePick";
+import Modles from "./test/Modles";
+import HookForm from "./test/HookForm";
+import Table from "./test/Table";
+import HomePage from "./styled-web/Home";
+import CardSearch from "./styled-web/SearchTxt";
+import HomeFarm from "./farmsite/HomeFarm";
 // import NumberStateEx from "./classFunctionState/ClassNumState";
 // import ClassStrState from "./classFunctionState/ClassStrState";
 // import ClassBoolState from "./classFunctionState/ClassBoolState";
@@ -111,9 +119,20 @@ function App() {
       {/* <UseeffRestric/> */}
       {/* <SearchComponent/> */}
 
-        <LazyLoad/>
+      {/* <LazyLoad/> */}
+      {/* <DatePick/> */}
+      {/* <Modles/> */}
+      {/* <HookForm/> */}
+        {/* <Table/> */}
 
-      {/* <Index/> */}
+
+      {/* <Index /> */}
+      
+        {/* <CardSearch/> */}
+
+<HomeFarm/>
+
+      {/* <HomePage/> */}
     </div>
   );
 }

@@ -97,7 +97,7 @@ const LazyLoad = () => {
           <Route
             path="/LazyComp"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<div style={{margin:"200px"}}>Loading...</div>}>
                 <Lazy />
               </Suspense>
             }

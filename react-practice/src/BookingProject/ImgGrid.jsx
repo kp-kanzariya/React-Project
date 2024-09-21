@@ -40,42 +40,26 @@ export default function ImgGrid() {
               MORJIM HOUSE BEARING NO 980A AND 980B MADHAWALA MORJIM GOA, 403512
               Morjim, India -
             </h6>
-            <a href=""> Excellent location - show map </a>
+            <a href=""> Excellent location - map </a>
           </div>
           <div className="right d-flex align-items-center justify-content-center p-4 ">
             <i className="fa-solid fa-phone"></i>
             <a href="" className="mx-2 ">
-              We Price Match
+              Price 
             </a>
           </div>
         </div>
-        {/* <div class="container">
-          <div className="row">
-            <div className="col-md-6">
-              <div className="row">
-                <div className="col-12 mb-3">
-                  <img src={i2} class="img-fluid" alt="Image 1" />
-                </div>
-                <div className="col-12">
-                  <img src={i3} class="img-fluid" alt="Image 2" />
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <img src={i4} class="img-fluid" alt="Image 3" />
-            </div>
-          </div>
-        </div> */}
+        
         <div className="container d-flex grids " onClick={() => setShow(true)} >
-          <div class="col-9 " style={{cursor:"pointer"}}>
+          <div class="col-md-9 col-12 " style={{cursor:"pointer"}}>
             <div className="row">
               <div className="col-3">
                 <div className="row">
                   <div className="col-12 mb-3">
-                    <img src={i2} class="img-fluid" style={{height:"235px"}} alt="Image 1" />
+                    <img src={i2} class="img-fluid imh"  alt="Image 1" />
                   </div>
                   <div className="col-12">
-                    <img src={i3} class="img-fluid" style={{height:"235px"}} alt="Image 2" />
+                    <img src={i3} class="img-fluid imh"  alt="Image 2" />
                   </div>
                 </div>
               </div>
@@ -104,7 +88,7 @@ export default function ImgGrid() {
               </div>
             </div>
           </div>
-          <div className="col-3">
+          <div className="col-12 col-md-3">
             <div class="card m-2">
               <div class="card-header">
                 <div class="rating">
@@ -137,7 +121,7 @@ export default function ImgGrid() {
                 <p class="top-rated-beach">Top-rated beach nearby: <span className="p-2 text-light m-2 rounded bg-info"> 8.6</span></p>
               </div>
             </div>
-            <iframe className="m-2 border p-2" style={{height:"270px"}} src={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d470029.4907297672!2d72.25008569347868!3d23.01990207203543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1726374800050!5m2!1sen!2sin"} ></iframe>
+            <iframe className="m-2 border p-2 frm"  src={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d470029.4907297672!2d72.25008569347868!3d23.01990207203543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1726374800050!5m2!1sen!2sin"} ></iframe>
           </div>
         </div>
       </div>
