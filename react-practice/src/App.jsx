@@ -1,6 +1,8 @@
 import { useState } from "react";
-import "./App.css";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import '../../react-practice/node_modules/bootstrap-icons/font/bootstrap-icons.json'
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import SearchComponent from "./json-server5/Searchtext";
 import UseeffRestric from "./test/UseeffRestric";
 import Index from "./BookingProject/Index";
@@ -26,7 +28,9 @@ import HookForm from "./test/HookForm";
 import Table from "./test/Table";
 import HomePage from "./styled-web/Home";
 import CardSearch from "./styled-web/SearchTxt";
-import HomeFarm from "./farmsite/HomeFarm";
+import Home from "./FarmPage/FarmHome";
+import StyledComp from "./Styling/StyledComp";
+import TailwindStyle from "./TailwindStyle";
 // import NumberStateEx from "./classFunctionState/ClassNumState";
 // import ClassStrState from "./classFunctionState/ClassStrState";
 // import ClassBoolState from "./classFunctionState/ClassBoolState";
@@ -51,7 +55,7 @@ function App() {
   // }
 
   return (
-    <div >
+    <div>
       {/* Function Componets */}
       {/* HI {x}
        <Fun/>
@@ -110,7 +114,7 @@ function App() {
 
       {/* Routing Links Navigation  */}
       {/* <AppRoute/> */}
-      
+
       {/* Json server  */}
       {/* <AppJson/> */}
       {/* <AppJsonCrud /> */}
@@ -123,16 +127,19 @@ function App() {
       {/* <DatePick/> */}
       {/* <Modles/> */}
       {/* <HookForm/> */}
-        {/* <Table/> */}
-
+      {/* <Table/> */}
 
       {/* <Index /> */}
-      
-        {/* <CardSearch/> */}
 
-<HomeFarm/>
+      {/* <CardSearch/> */}
 
       {/* <HomePage/> */}
+
+
+      <StyledComp />
+      <TailwindStyle/>
+      
+      {/* <Home/> */}
     </div>
   );
 }
