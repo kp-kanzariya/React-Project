@@ -1,0 +1,68 @@
+{
+  "product": [
+    {
+      "id": "1",
+      "img": "assets/img/shop_01.jpg",
+      "img1": "/assets/img/shop_10.jpg",
+      "img2": "/assets/img/shop_06.jpg",
+      "img3": "/assets/img/shop_03.jpg",
+      "img4": "/assets/img/shop_02.jpg",
+      "img5": "/assets/img/shop_01.jpg",
+      "img6": "/assets/img/shop_05.jpg",
+      "title": "New Colletion of Shoe",
+      "brand": "Puma",
+      "price": "$250.00",
+      "rating": "4.2",
+      "cmt": "42",
+      "desc": "Step into sophistication with these black formal oxford-style shoes from Bata. Crafted from premium corrected grain leather, these shoes exude timeless elegance. The TPR sole provides durability and traction, while the lace-up closure ensures a secure fit. Whether you're attending a business meeting or a special occasion, these shoes make a polished statement of style and professionalism. ",
+      "colors": "Black Red",
+      "sp": "Bata India LimitedCountry of originIndiaMarketed by Bata India Limited 27B, Camac Street, First Floor, Kolkata 700016 West Bengal ",
+      "cnt": "15"
+    },
+    {
+      "img": "assets/img/shop_01.jpg",
+      "img1": "/assets/img/shop_10.jpg",
+      "img2": "/assets/img/shop_06.jpg",
+      "img3": "/assets/img/shop_03.jpg",
+      "img4": "/assets/img/shop_02.jpg",
+      "img5": "/assets/img/",
+      "title": "New  of Shoe new added shop",
+      "desc": "Step into sophistication with these black formal oxford-style shoes from Bata. Crafted from premium corrected grain leather, these shoes exude timeless elegance. The TPR sole provides durability . ",
+      "brand": "Puma",
+      "sp": "Bata IndWest Bengal ",
+      "cnt": "15",
+      "price": "$1.00",
+      "rating": "4.2",
+      "colors": "Black Red",
+      "cmt": "4",
+      "id": "2"
+    },
+    {
+      "id": "f6ca",
+      "img": "assets/img/shop_01.jpg",
+      "img1": "/assets/img/shop_10.jpg",
+      "img2": "assets/img/shop_02",
+      "img3": "assets/img/shop_02.",
+      "img4": "assets/img/shop_02.jpg",
+      "img5": "assets/img/shop_02.jpg",
+      "title": "Thiddtt new price imgs",
+      "desc": "Whether you're attending a business meeting or a special occasion, these shoes make a polished statement of style and professionalism. ",
+      "brand": "Nevia",
+      "sp": " Marketed by: Bata India Limited 27B, Camac Street, First Floor, Kolkata 700016 West Bengal ",
+      "cnt": "45",
+      "price": "429",
+      "rating": "5",
+      "colors": "Green Black",
+      "cmt": "45"
+    }
+  ],
+  "users":
+  [
+    {
+      "id":"1",
+      "name":"John",
+      "email":"example@gmail.com",
+      "pass":"1234"
+    }
+  ]
+}
