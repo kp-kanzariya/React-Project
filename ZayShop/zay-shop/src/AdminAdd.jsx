@@ -96,7 +96,7 @@ function AdminAdd() {
   console.log(product1);
   return (
     <div className="container mt-5">
-      <h2 className="text-center mb-4">EDIT Product Information</h2>
+      <h2 className="text-center mb-4">New Product Information</h2>
       <form onSubmit={handleSubmit}>
         {/* Images Section */}
         <div className="mb-3">

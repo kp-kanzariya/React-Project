@@ -1,8 +1,45 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { userID } from "../App";
 
 function Header() {
+  const { sharedID, setSharedID } = useContext(userID);
+  const nav = useNavigate();
+
+  console.log(sharedID.id);
+
+  const handleLogout = () => {
+    let c = confirm("Logout");
+    if (c) {
+      setSharedID({ id: "user123" });
+      setTimeout(() => {
+        nav("/"); 
+      }, 100); 
+    }
+  };
   
+  let x = (
+    <>
+      <li className="nav-item">
+        <Link className="nav-link text-warning" to="/userlog">
+          Login
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link text-warning" to="/usersign">
+          SignUp
+        </Link>
+      </li>
+    </>
+  );
+  let y = (
+    <li className="nav-item">
+      <Link className="nav-link text-warning" onClick={handleLogout}>
+        Logout
+      </Link>
+    </li>
+  );
+
   return (
     <div>
       {/* Start Top Nav */}
@@ -66,12 +103,12 @@ function Header() {
       {/* Header */}
       <nav className="navbar navbar-expand-lg navbar-light shadow">
         <div className="container d-flex justify-content-between align-items-center">
-          <a
+          <Link
+            to={"/"}
             className="navbar-brand text-success logo h1 align-self-center"
-            href="/"
           >
             Zay
-          </a>
+          </Link>
           <button
             className="navbar-toggler border-0"
             type="button"
@@ -90,30 +127,26 @@ function Header() {
             <div className="flex-fill">
               <ul className="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                 <li className="nav-item">
-                  <a className="nav-link" href="/">
+                  <Link className="nav-link" to="/">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/about">
+                  <Link className="nav-link" to="/about">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/shop">
+                  <Link className="nav-link" to="/shop">
                     Shop
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/contact">
+                  <Link className="nav-link" to="/contact">
                     Contact
-                  </a>
+                  </Link>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link text-warning" href="/user">
-                    Login
-                  </a>
-                </li>
+                {sharedID.id == "user123" ? x : y}
               </ul>
             </div>
             <div className="navbar align-self-center d-flex">
@@ -138,24 +171,43 @@ function Header() {
               >
                 <i className="fa fa-fw fa-search text-dark mr-2" />
               </a>
-              <a
-                className="nav-icon position-relative text-decoration-none"
-                href="/cart"
-              >
-                <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1" />
-                <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-info text-dark">
-                  0
-                </span>
-              </a>
-              <a
-                className="nav-icon position-relative text-decoration-none"
-                href="/userprofile" 
-              >
-                <i className="fa fa-fw fa-user text-dark mr-3" />
-                <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-info text-dark">
+              {/* {sharedID.id == "user123" ? a : b} */}
+              {sharedID.id != "user123" ? (
+                <Link
+                  to={"/cart/" + sharedID.id}
+                  className="nav-icon position-relative text-decoration-none"
+                >
+                  <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1" />
+                  {/* <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-info text-dark">
+                    0
+                  </span> */}
+                </Link>
+              ) : (
+                <Link
+                  to={"/userlog"}
+                  className="nav-icon position-relative text-decoration-none"
+                >
+                  <i className="fa fa-fw fa-cart-arrow-down text-dark mr-3" />
+                </Link>
+              )}
+              {sharedID.id != "user123" ? (
+                <Link
+                  to={"/userprofile/" + sharedID.id}
+                  className="nav-icon position-relative text-decoration-none"
+                >
+                  <i className="fa fa-fw fa-user text-dark mr-3" />
+                  {/* <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-info text-dark">
                   +0
-                </span>
-              </a>
+                </span> */}
+                </Link>
+              ) : (
+                <Link
+                  to={"/userlog"}
+                  className="nav-icon position-relative text-decoration-none"
+                >
+                  <i className="fa fa-fw fa-user text-dark mr-3" />
+                </Link>
+              )}
             </div>
           </div>
         </div>

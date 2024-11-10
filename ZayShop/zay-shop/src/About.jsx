@@ -5,7 +5,7 @@ import Footer from "./Componets/Footer";
 function About() {
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <div>
         <section className="bg-success py-5">
           <div className="container">
@@ -260,7 +260,7 @@ function About() {
         </div>
       </section>
       {/*End Brands*/}
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

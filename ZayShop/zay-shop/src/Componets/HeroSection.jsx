@@ -6,7 +6,7 @@ function HeroSection() {
   return (
 
     <div>
-      <Header/>
+      {/* <Header/> */}
           
 <div>
   {/* Modal */}
@@ -226,7 +226,7 @@ function HeroSection() {
 {/* End Featured Product */}
 
 
-<Footer/>
+{/* <Footer/> */}
     </div>
   )
 }

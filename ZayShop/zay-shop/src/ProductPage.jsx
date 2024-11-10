@@ -1,26 +1,93 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Header from "./Componets/Header";
 import Footer from "./Componets/Footer";
+import { userID } from "./App";
 
 function ProductPage() {
   const { pId } = useParams();
   const [size, setSize] = useState("S");
+  const [pid, setPid] = useState('');
   const [qnt, setQnt] = useState(1);
   const [product1, setProduct1] = useState([]);
+  const [user, setUser] = useState([]);
+  const { sharedID, setSharedID } = useContext(userID);
+  const [cart, setCart] = useState([]);
+  const nav = useNavigate();
+  
   useEffect(() => {
     fetch(`http://localhost:5555/product/${pId}`)
       .then((response) => response.json())
       .then((data) => setProduct1(data));
   }, [pId]);
 
-  // console.log(product1);
+  useEffect(() => {
+    if (sharedID && sharedID.id) {
+      fetch(`http://localhost:4444/users/${sharedID.id}`)
+        .then((response) => response.json())
+        .then((data) => setUser(data));
+    }
+  }, [sharedID]);
 
+  const handleBuy = () => {
+    if (!sharedID || sharedID.id === "user123") {
+      alert("You must be logged in to buy this product");
+      nav("/userlog");
+    } else {
+      alert("Buy This product");
+      nav("/payform");
+    }
+  };
+
+  const handleAddToCart = () => {
+    
+    const existingProduct = user.cart && user.cart.find((item) => item.productId === product1.id);
+    
+    if (existingProduct) {
+      alert("Product already exists in the cart!");
+      return; 
+    }
+  
+    const newProduct = {
+      productId: product1.id,
+      productImg: product1.img1,
+      productName: product1.title,
+      productPrice: product1.price,
+      productQuantity: qnt,
+      size: size,
+    };
+  
+    
+    const updatedCart = user.cart ? [...user.cart, newProduct] : [newProduct];
+    const updatedUser = { ...user, cart: updatedCart };
+  
+    fetch(`http://localhost:4444/users/${sharedID.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedUser),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to update the cart");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setUser(data); 
+        alert("Product added to cart successfully!");
+      })
+      .catch((error) => {
+        console.error("Error adding product to cart:", error);
+        alert("Failed to add product to the cart.");
+      });
+  };
   
   
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <div>
         {/* Open Content */}
 
@@ -218,7 +285,7 @@ function ProductPage() {
                     <ul className="list-unstyled pb-3">
                       <li>{product1.sp} </li>
                     </ul>
-                    <form action method="GET">
+                    <>
                       <input
                         type="hidden"
                         name="product-title"
@@ -285,7 +352,10 @@ function ProductPage() {
                               />
                             </li>{" "}
                             <br />
-                            <li className="list-inline-item" onClick={()=>setQnt(qnt - 1)}>
+                            <li
+                              className="list-inline-item"
+                              onClick={() => setQnt(qnt - 1)}
+                            >
                               <span className="btn btn-success" id="btn-minus">
                                 -
                               </span>
@@ -295,10 +365,13 @@ function ProductPage() {
                                 className="badge bg-secondary"
                                 id="var-value"
                               >
-                                {qnt}
+                                {qnt >= 1 && qnt <= 15 ? qnt : setQnt(1)}
                               </span>
                             </li>
-                            <li className="list-inline-item" onClick={()=>setQnt(qnt + 1)}>
+                            <li
+                              className="list-inline-item"
+                              onClick={() => setQnt(qnt + 1)}
+                            >
                               <span className="btn btn-success" id="btn-plus">
                                 +
                               </span>
@@ -309,26 +382,23 @@ function ProductPage() {
                       <div className="row pb-3">
                         <div className="col d-grid">
                           <button
-                            type="submit"
                             className="btn btn-success btn-lg"
-                            name="submit"
-                            value="buy"
+                            onClick={handleBuy}
                           >
                             Buy
                           </button>
                         </div>
+                        {/* {console.log(newProduct)} */}
                         <div className="col d-grid">
                           <button
-                            type="submit"
                             className="btn btn-success btn-lg"
-                            name="submit"
-                            value="addtocard"
+                            onClick={() => handleAddToCart()}
                           >
                             Add To Cart
                           </button>
                         </div>
                       </div>
-                    </form>
+                    </>
                   </div>
                 </div>
               </div>
@@ -337,7 +407,7 @@ function ProductPage() {
         </section>
         {/* Close Content */}
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

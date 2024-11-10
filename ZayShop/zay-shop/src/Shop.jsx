@@ -13,7 +13,7 @@ function Shop() {
   console.log(product)
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <div>
         {/* Start Content */}
         <div className="container py-5">
@@ -143,46 +143,46 @@ function Shop() {
                         <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                           <ul className="list-unstyled">
                             <li>
-                              <a
+                              <Link
                                 className="btn btn-success text-white"
-                                href={`/product/${prod.id}`}
+                                to={`/product/${prod.id}`}
                               >
                                 <i className="far fa-heart" />
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a
+                              <Link
                                 className="btn btn-success text-white mt-2"
-                                href={`/product/${prod.id}`}
+                                to={`/product/${prod.id}`}
                               >
                                 <i className="far fa-eye" />
-                              </a>
+                              </Link>
                             </li>
-                            <li>
+                            {/* <li>
                               <a
                                 className="btn btn-success text-white mt-2"
                                 href={`/product/${prod.id}`}
                               >
                                 <i className="fas fa-cart-plus" />
                               </a>
-                            </li>
+                            </li> */}
                           </ul>
                         </div>
                       </div>
                       <div className="card-body">
                         <div className="titlehead d-flex justify-content-between">
-                          <a
-                            href={`/product/${prod.id}`}
+                          <Link
+                            to={`/product/${prod.id}`}
                             className="h3 text-decoration-none"
                           >
                             {prod.title}
-                          </a>
-                          <a
-                            href={`/product/${prod.id}`}
+                          </Link>
+                          <Link
+                            to={`/product/${prod.id}`}
                             className="h3 text-decoration-none"
                           >
                             {prod.brand}
-                          </a>
+                          </Link>
                         </div>
                         <ul className="w-100 list-unstyled d-flex justify-content-between mb-0">
                           <li>{prod.size}</li>
@@ -401,7 +401,7 @@ function Shop() {
         </section>
         {/*End Brands*/}
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

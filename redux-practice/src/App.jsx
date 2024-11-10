@@ -1,15 +1,11 @@
 import { useState } from "react";
-
-import "./App.css";
-import { useSelector } from "react-redux";
 import Home from "./Home";
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 function App() {
-  const y = useSelector((state) => state.xyz);
 
   return (
     <>
-      <h1>Hi {y}</h1>
       <Home/>
     </>
   );

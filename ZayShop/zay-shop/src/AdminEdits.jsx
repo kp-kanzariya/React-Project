@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 function ProductForm() {
   const [product1, setProduct1] = useState([]);
-  let id = 2;
+  const { id }= useParams()
   useEffect(() => {
     fetch(`http://localhost:5555/product/${id}`)
       .then((response) => response.json())

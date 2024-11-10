@@ -5,7 +5,7 @@ import Footer from "./Componets/Footer";
 function Contact() {
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <div className="container-fluid bg-light py-5">
         <div className="col-md-6 m-auto text-center">
           <h1 className="h1">Contact Us</h1>
@@ -83,7 +83,7 @@ function Contact() {
         </div>
       </div>
       {/* End Contact */}
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }
