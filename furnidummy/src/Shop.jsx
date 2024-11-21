@@ -1,6 +1,4 @@
 import React from "react";
-
-import { products } from './App'
 import {Link} from 'react-router-dom'
 
 function Shop() {
@@ -26,21 +24,21 @@ function Shop() {
           <div className="container">
             <div className="row">
               {/* Start Column 1 */}
-              {products && products.map((p)=>(
-              <div className="col-12 col-md-4 col-lg-3 mb-5" key={p.id}>
+             
+              <div className="col-12 col-md-4 col-lg-3 mb-5">
                 <a className="product-item" href="#">
                   <img
-                    src={p.img}
+                    src=""
                     className="img-fluid product-thumbnail"
                   />
-                  <h3 className="product-title">{p.prodName}</h3>
-                    <strong className="product-price">${p.price}</strong>
-                  <Link className="icon-cross" to={`/cart/${p.id}`}>
+                  <h3 className="product-title">"ddf"</h3>
+                    <strong className="product-price">$</strong>
+                  <Link className="icon-cross" to={`/cart`}>
                     <img src="images/cross.svg" className="img-fluid" />
                   </Link>
                 </a>
                 </div>
-              ))}
+          
               {/* End Column 1 */}
              
             </div>

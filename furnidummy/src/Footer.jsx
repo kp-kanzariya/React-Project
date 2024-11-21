@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div>
       {/* Start Footer Section */}
-      <footer className="footer-section">
+      <footer className="footer-section " style={{marginBottom:"0px"}}>
         <div className="container relative">
           <div className="sofa-img">
             <img src="/images/sofa.png" alt="Image" className="img-fluid" />

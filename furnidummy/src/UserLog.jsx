@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './App.css'
+
 import { useNavigate } from "react-router-dom";
 const UserLog = () => {
   const [isLoginMode, setIsLoginMode] = useState(true);
@@ -27,19 +28,7 @@ const UserLog = () => {
     }
     localStorage.setItem("userDetails", JSON.stringify(signupData));
       alert("Signup Successful!");
-    //   localStorage.clear();
-    //   alert("Local storage cleared.");
-    //   function getLocalStorageSize() {
-    //     let total = 0;
-    //     for (let key in localStorage) {
-    //       if (localStorage.hasOwnProperty(key)) {
-    //         total += (localStorage[key].length + key.length);
-    //       }
-    //     }
-    //     console.log("Local storage used: " + (total / 1024).toFixed(2) + " KB");
-    //     return total;
-    //   }
-    //   getLocalStorageSize();
+ 
 
   };
 
@@ -53,9 +42,9 @@ const UserLog = () => {
     ) {
         alert("Login Successful!"+storedUser.email);
 
-        nav(`/profile/${storedUser.email}`);
+        // nav(`/profile/${storedUser.email}`);
 
-        // nav('/profile')
+        nav('/')
     } else {
       alert("Invalid email or password!");
     }

@@ -1,10 +1,9 @@
 import React from "react";
-import { usersCart } from "./App";
 import { useState } from "react";
 
 function Cart() {
   // const [cart, setCart] = useState(usersCart);
-  const [qnt, setQnt] = useState(1);
+
   return (
     <div>
       <div>
@@ -39,62 +38,49 @@ function Cart() {
                       </tr>
                     </thead>
                     <tbody>
-                      {usersCart.map((item, index) => (
+                      <>
                         <>
-                          {item.userId == 1 ?
-                          <>
-                            {
-                              item.cart.map((a) => (
-                                <tr>
-                                  <td className="product-thumbnail">
-                                    <img
-                                      src={a.img}
-                                      alt="Image"
-                                      className="img-fluid"
-                                    />
-                                  </td>
-                                  <td className="product-name">
-                                    <h2 className="h5 text-black">{a.prodName}</h2>
-                                  </td>
-                                  <td>${a.price}</td>
-                                  <td>
-                                    <div
-                                      className="input-group mb-3 d-flex align-items-center quantity-container"
-                                      style={{ maxWidth: 120 }}
-                                    >
-                                      <div className="input-group-prepend">
-                                        <button
-                                          className="btn btn-outline-black decrease"
-                                          type="button"  onClick={()=>setQnt(qnt-1)}
-                                        >
-                                          −
-                                        </button>
-                                      </div>
-                                      <span className="form-control text-center quantity-amount">
-                                        {qnt}
-                                      </span>
-                                      <div className="input-group-append">
-                                        <button
-                                          className="btn btn-outline-black increase"
-                                          type="button" onClick={()=>setQnt(qnt+1)}
-                                        >
-                                          +
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </td>
-                                  <td>$49.00</td>
-                                  <td>
-                                    <a href="#" className="btn btn-black btn-sm">
-                                      X
-                                    </a>
-                                  </td>
-                                </tr>
-                              ))
-                            } </>:
-                            "no item"}
+                          <tr>
+                            <td className="product-thumbnail">
+                              <img src="" alt="Image" className="img-fluid" />
+                            </td>
+                            <td className="product-name">
+                              <h2 className="h5 text-black">"fb"</h2>
+                            </td>
+                            <td>$</td>
+                            <td>
+                              <div
+                                className="input-group mb-3 d-flex align-items-center quantity-container"
+                                style={{ maxWidth: 120 }}
+                              >
+                                <div className="input-group-prepend">
+                                  <button
+                                    className="btn btn-outline-black decrease"
+                                    type="button"
+                                  >
+                                    −
+                                  </button>
+                                </div>
+                                <span className="form-control text-center quantity-amount"></span>
+                                <div className="input-group-append">
+                                  <button
+                                    className="btn btn-outline-black increase"
+                                    type="button"
+                                  >
+                                    +
+                                  </button>
+                                </div>
+                              </div>
+                            </td>
+                            <td>$49.00</td>
+                            <td>
+                              <a href="#" className="btn btn-black btn-sm">
+                                X
+                              </a>
+                            </td>
+                          </tr>
                         </>
-                      ))}
+                      </>
                     </tbody>
                   </table>
                 </div>

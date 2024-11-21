@@ -1,6 +1,10 @@
 import { useState } from "react";
+// import { useDispatch, useSelector } from 'react-redux';
+// import { logout } from './authSlice';
+// import Login from './Login';
+// import CartItem from './CartItem';
+// import ProductList from './ProductList';
 import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
-
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home";
@@ -13,112 +17,29 @@ import Cart from "./Cart";
 import UserProfile from "./UserProfile";
 import UserLog from "./UserLog";
 
- {/* {usersCart && usersCart.map((v) => (
-          <div key={v.userId}>
-            <h2>{v.userName}</h2>
-            <h3>{v.userEmail}</h3>
-            <h3>{v.cart.map((a) => (<li>{a.img }</li>))}</h3>
-          </div>
-        ))} */}
-
-export const products = [
-  {
-    id: 101,
-    img: "images/product-1.png",
-    prodName: "Product 1",
-    price: 29.99
-  },
-  {
-    id: 102,
-    img: "images/product-2.png",
-    prodName: "Product 1",
-    price: 29.99
-  },
-  {
-    id: 103,
-    img: "images/product-3.png",
-    prodName: "Product 1",
-    price: 29.99
-  },
-  {
-    id: 104,
-    img: "images/product-1.png",
-    prodName: "Product 1",
-    price: 29.99
-  },
-  {
-    id: 105,
-    img: "images/product-2.png",
-    prodName: "Product 1",
-    price: 29.99
-  },
-  {
-    id: 106,
-    img: "images/product-3.png",
-    prodName: "Product 1",
-    price: 29.99
-  },
-  {
-    id: 107,
-    img: "images/product-1.png",
-    prodName: "Product 1",
-    price: 29.99
-  },
-  {
-    id: 108,
-    img: "images/product-2.png",
-    prodName: "Product 1",
-    price: 29.99
-  }
-]
-export const usersCart = [
-  {
-    userId: 1,
-    userName: "John Doe",
-    userEmail: "johndoe@example.com",
-    cart: [
-      {
-        id: 101,
-        img: "/images/product-1.png",
-        prodName: "Product 1",
-        price: 29.99,
-        quantity: 2
-      },
-      {
-        id: 102,
-        img: "/images/product-2.png",
-        prodName: "Product 2",
-        price: 15.49,
-        quantity: 1
-      }
-    ]
-  },
-  {
-    userId: 2,
-    userName: "Jane Smith",
-    userEmail: "janesmith@example.com",
-    cart: [
-      {
-        id: 103,
-        img: "/images/product-3.png",
-        prodName: "Product 3",
-        price: 45.00,
-        quantity: 1
-      }
-    ]
-  },
-  {
-    userId: 3,
-    userName: "Alice Johnson",
-    userEmail: "alicejohnson@example.com",
-    cart: []
-  }
-];
-
 function App() {
-console.log(usersCart)
+  // console.log(usersCart)
+  // const dispatch = useDispatch();
+  // const user = useSelector((state) => state.auth.user);
+  // const handleLogout = () => {
+  //   dispatch(logout());
+  //   alert('Logged out successfully!');
+  // };
   return (
     <>
+      {/* {user ? (
+        <>
+          <header>
+            <h1>Welcome, {user.email}</h1>
+            <button onClick={handleLogout}>Logout</button>
+          </header>
+          <ProductList />
+          <CartItem />
+        </>
+      ) : (
+         <Login />
+      )} */}
+    
       <BrowserRouter>
        
         
@@ -132,6 +53,7 @@ console.log(usersCart)
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart/:cid" element={<Cart />} />
           <Route path="/log" element={<UserLog />} />
+          {/* <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/userprofile" element={<UserProfile />} /> */}
 
           {/* <Route path="/admin" element={<AdminSide />} />
