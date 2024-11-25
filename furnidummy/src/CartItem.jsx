@@ -5,11 +5,10 @@ import { removeItem } from './cartSlice';
 
 const CartItem = () => {
   const dispatch = useDispatch();
-  // const user = useSelector((state) => state.auth.user);
+  const user = useSelector((state) => state.auth.user);
   const cartItems = useSelector((state) => state.cart.cart[user?.id] || []);
-
   const handleRemove = (itemId) => {
-    // dispatch(removeItem({ userId: user.id, itemId }));
+    dispatch(removeItem({ userId: user.id, itemId }));
   };
 
   return (

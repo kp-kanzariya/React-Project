@@ -1,9 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { removeItem } from "./cartSlice";
 
 function Cart() {
-  // const [cart, setCart] = useState(usersCart);
-
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
+  const cartItems = useSelector((state) => state.cart.cart[user?.id] || []);
+  const handleRemove = (itemId) => {
+    dispatch(removeItem({ userId: user.id, itemId }));
+  };
   return (
     <div>
       <div>
@@ -26,29 +31,32 @@ function Cart() {
             <div className="row mb-5">
               <form className="col-md-12" method="post">
                 <div className="site-blocks-table">
-                  <table className="table">
-                    <thead>
-                      <tr>
-                        <th className="product-thumbnail">Image</th>
-                        <th className="product-name">Product</th>
-                        <th className="product-price">Price</th>
-                        <th className="product-quantity">Quantity</th>
-                        <th className="product-total">Total</th>
-                        <th className="product-remove">Remove</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <>
-                        <>
-                          <tr>
+                  {cartItems.length === 0 ? (
+                    <>No items in the cart.</>
+                  ) : (
+                    <table className="table">
+                      <thead>
+                        <tr>
+                          <th className="product-thumbnail">Image</th>
+                          <th className="product-name">Product</th>
+                          <th className="product-price">Price</th>
+                          {/* <th className="product-quantity">Quantity</th>
+                          <th className="product-total">Total</th> */}
+                          <th className="product-remove">Remove</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        {cartItems.map((item) => (
+                          <tr key={item.id}>
                             <td className="product-thumbnail">
-                              <img src="" alt="Image" className="img-fluid" />
+                              <img src={item.src} alt="Image" className="img-fluid" />
                             </td>
                             <td className="product-name">
-                              <h2 className="h5 text-black">"fb"</h2>
+                              <h2 className="h5 text-black">{item.title }</h2>
                             </td>
-                            <td>$</td>
-                            <td>
+                            <td>${ item.price}</td>
+                            {/* <td>
                               <div
                                 className="input-group mb-3 d-flex align-items-center quantity-container"
                                 style={{ maxWidth: 120 }}
@@ -71,18 +79,18 @@ function Cart() {
                                   </button>
                                 </div>
                               </div>
-                            </td>
-                            <td>$49.00</td>
+                            </td> */}
+                            {/* <td>$49.00</td> */}
                             <td>
-                              <a href="#" className="btn btn-black btn-sm">
+                              <a href="#" className="btn btn-black btn-sm" onClick={() => handleRemove(item.id)}>
                                 X
                               </a>
                             </td>
                           </tr>
-                        </>
-                      </>
-                    </tbody>
-                  </table>
+                        ))}
+                      </tbody>
+                    </table>
+                  )}
                 </div>
               </form>
             </div>

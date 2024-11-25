@@ -1,6 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "./authSlice";
 function Header() {
+  const dispatch = useDispatch();
+  const nav = useNavigate();
+  const user = useSelector((state) => state.auth.user);
+  const handleLogout = () => {
+    dispatch(logout());
+    confirm("Logged out successfully!");
+    nav("/");
+  };
+  console.log(user);
+  // console.log(user.id)
   return (
     <div>
       <nav
@@ -54,16 +66,31 @@ function Header() {
                   Contact us
                 </Link>
               </li>
+              {user ? (
+                <li>
+                  {/* <h1>Welcome, {user.email}</h1> */}
+                  <Link className="nav-link" onClick={handleLogout}>
+                    Logout
+                  </Link>
+                </li>
+              ) : (
+                <li>
+                  <Link className="nav-link" to="/login">
+                    Login
+                  </Link>
+                </li>
+              )}
             </ul>
             <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
               <li>
-                <Link className="nav-link" to="/log">
-                  <img src="/images/user.svg" />
+                <Link className="nav-link" to="/profile">
+                  {/* <img src="/images/user.svg" /> */}
+                  {user && user.id}
                 </Link>
               </li>
               <li>
-                <Link className="nav-link" to="/cart">
-                  <img src="/images/cart.svg" />
+                <Link className="nav-link" to={`/cart`}>
+                  {user && <img src="/images/cart.svg" />}
                 </Link>
               </li>
             </ul>
@@ -75,5 +102,3 @@ function Header() {
 }
 
 export default Header;
-
-

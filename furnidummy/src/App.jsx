@@ -1,8 +1,8 @@
 import { useState } from "react";
 // import { useDispatch, useSelector } from 'react-redux';
-// import { logout } from './authSlice';
-// import Login from './Login';
-// import CartItem from './CartItem';
+import { logout } from './authSlice';
+import Login from './Login';
+import CartItem from './CartItem';
 // import ProductList from './ProductList';
 import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
 import Header from "./Header";
@@ -51,11 +51,12 @@ function App() {
           <Route path="/services" element={<Serviceses />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/cart/:cid" element={<Cart />} />
-          <Route path="/log" element={<UserLog />} />
-          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/profile" element={<UserProfile />} />
+          {/* <Route path="/cartitem" element={<CartItem />} /> */}
+          {/* <Route path="/log" element={<UserLog />} /> */}
+          <Route path="/login" element={<Login />} />
           {/* <Route path="/userprofile" element={<UserProfile />} /> */}
-
           {/* <Route path="/admin" element={<AdminSide />} />
             <Route path="/edit/:id" element={<ProductForm />} />
             <Route path="/add" element={<AdminAdd />} /> */}
