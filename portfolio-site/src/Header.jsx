@@ -41,12 +41,12 @@ function Header() {
                   <li className="smooth-menu">
                     <a href="#skills">skills</a>
                   </li>
-                  <li className="smooth-menu">
+                  {/* <li className="smooth-menu">
                     <a href="#experience">experience</a>
-                  </li>
+                  </li> */}
                   
                   <li className="smooth-menu">
-                    <a href="#portfolio">portfolio</a>
+                    <a href="#portfolio">Projects</a>
                   </li>
           
                   <li className="smooth-menu">

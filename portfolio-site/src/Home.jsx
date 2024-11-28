@@ -14,7 +14,7 @@ function Home() {
                   <span>.</span>{" "}
                 </h2>
                 <p>web designer / devloper</p>
-                <a href="assets/download/new.pdf" download>
+                <a href="assets/download/ResumeKruparth1610.pdf" download>
                   download resume
                 </a>
               </div>
@@ -65,9 +65,9 @@ function Home() {
                 </div>
               </div>
               <div className="col-sm-offset-1 col-sm-5">
-                <div className="single-about-img">
+                <div className="single-about-img" style={{width:"430px"}}>
                   <img
-                    src="assets/images/about/profile-image.png"
+                    src="assets/images/about/profileIMG.png"
                     alt="profile_image"
                   />
                   <div className="about-list-icon">
@@ -122,7 +122,7 @@ function Home() {
                 <div className="col-sm-4">
                   <div className="single-horizontal-timeline">
                     <div className="experience-time">
-                      <h2>2024 jul-oct</h2>
+                      <h2>2024 jul-Now</h2>
                       <h3>
                         react<span> </span> Js Developer
                       </h3>
@@ -140,13 +140,7 @@ function Home() {
                         <h4 className="title">TOPS Technologies Pvt. Ltd</h4>
                         <h5>Ahmedabad , gujarat</h5>
                         <p className="description">
-                          React.js is a JavaScript library for building fast,
-                          interactive user interfaces using a component-based
-                          architecture. It efficiently updates the UI with its
-                          virtual DOM, supports JSX (HTML-like syntax in
-                          JavaScript), and enables state management through
-                          Hooks, making it ideal for developing scalable
-                          single-page applications.
+                        As a React.js developer, I have expertise in JSX, components, props, state, React hooks, React Router for dynamic navigation, and CRUD operations using REST APIs and JSON-server. My skills include state management with Redux, styling with Bootstrap, CSS, and Font Awesome, breaking UI into reusable components, and converting HTML sections to React components. 
                         </p>
                       </div>
                       {/*/.timeline-content*/}
@@ -320,7 +314,7 @@ function Home() {
                     </div>
                     {/* /.barWrapper */}
                     <div className="barWrapper">
-                      <span className="progressText">jQuery</span>
+                      <span className="progressText">Redux Js</span>
                       <div className="single-progress-txt">
                         <div className="progress ">
                           <div
@@ -737,7 +731,7 @@ function Home() {
         <section id="portfolio" className="portfolio">
           <div className="portfolio-details">
             <div className="section-heading text-center">
-              <h2>portfolio</h2>
+              <h2>Projects</h2>
             </div>
             <div className="container">
               <div className="portfolio-content">
@@ -746,36 +740,22 @@ function Home() {
                     <div className="col-sm-4">
                       <div className="item">
                         <img
-                          src="assets/images/portfolio/p1.jpg"
+                          src="assets/images/portfolio/htmlcss.png"
                           alt="portfolio image"
                         />
                         <div className="isotope-overlay">
-                          <a href="#">ui/ux design</a>
+                          <a href="https://kp-portfolio-htmlcss.netlify.app">HTML CSS design</a>
                         </div>
                         {/* /.isotope-overlay */}
                       </div>
                       {/* /.item */}
                       <div className="item">
                         <img
-                          src="assets/images/portfolio/p2.jpg"
+                          src="assets/images/portfolio/dummy.png"
                           alt="portfolio image"
                         />
                         <div className="isotope-overlay">
-                          <a href="#">ui/ux design</a>
-                        </div>
-                        {/* /.isotope-overlay */}
-                      </div>
-                      {/* /.item */}
-                    </div>
-                    {/* /.col */}
-                    <div className="col-sm-4">
-                      <div className="item">
-                        <img
-                          src="assets/images/portfolio/p3.jpg"
-                          alt="portfolio image"
-                        />
-                        <div className="isotope-overlay">
-                          <a href="#">web design</a>
+                          <a href="https://kp-mui-crud.netlify.app">DummyData CRUD</a>
                         </div>
                         {/* /.isotope-overlay */}
                       </div>
@@ -785,22 +765,36 @@ function Home() {
                     <div className="col-sm-4">
                       <div className="item">
                         <img
-                          src="assets/images/portfolio/p4.jpg"
+                          src="assets/images/portfolio/redux1.png"
                           alt="portfolio image"
                         />
                         <div className="isotope-overlay">
-                          <a href="#">web development</a>
+                          <a href="https://kp-redux-crud.netlify.app">Redux CRUD</a>
+                        </div>
+                        {/* /.isotope-overlay */}
+                      </div>
+                      {/* /.item */}
+                    </div>
+                    {/* /.col */}
+                    <div className="col-sm-4">
+                      <div className="item">
+                        <img
+                          src="assets/images/portfolio/json.png"
+                          alt="portfolio image"
+                        />
+                        <div className="isotope-overlay">
+                          <a href="https://kp-ecomm-shoe.netlify.app">JSON API CRUD</a>
                         </div>
                         {/* /.isotope-overlay */}
                       </div>
                       {/* /.item */}
                       <div className="item">
                         <img
-                          src="assets/images/portfolio/p5.jpg"
+                          src="assets/images/portfolio/ecomm.png"
                           alt="portfolio image"
                         />
                         <div className="isotope-overlay">
-                          <a href="#">web development</a>
+                          <a href="#">Ecomm site</a>
                         </div>
                         {/* /.isotope-overlay */}
                       </div>
