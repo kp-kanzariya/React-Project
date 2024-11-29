@@ -29,15 +29,15 @@ function ProductPage() {
     }
   }, [sharedID]);
 
-  const handleBuy = () => {
-    if (!sharedID || sharedID.id === "user123") {
-      alert("You must be logged in to buy this product");
-      nav("/userlog");
-    } else {
-      alert("Buy This product");
-      nav("/payform");
-    }
-  };
+  // const handleBuy = () => {
+  //   if (!sharedID || sharedID.id === "user123") {
+  //     alert("You must be logged in to buy this product");
+  //     nav("/userlog");
+  //   } else {
+  //     alert("Buy This product");
+  //     nav("/payform");
+  //   }
+  // };
 
   const handleAddToCart = () => {
     
@@ -380,14 +380,7 @@ function ProductPage() {
                         </div>
                       </div>
                       <div className="row pb-3">
-                        <div className="col d-grid">
-                          <button
-                            className="btn btn-success btn-lg"
-                            onClick={handleBuy}
-                          >
-                            Buy
-                          </button>
-                        </div>
+                        
                         {/* {console.log(newProduct)} */}
                         <div className="col d-grid">
                           <button

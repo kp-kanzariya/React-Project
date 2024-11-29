@@ -18,6 +18,7 @@ import AddUserForm from "./AddUser";
 import Login, { Signup } from "./Userlog";
 import CheckoutForm, { ConfirmOrderPage, PaymentPage } from "./PaymentPage";
 import { createContext, useState } from "react";
+
 // import FindUserById from "../SearchId";
 export const userID = createContext();
 
@@ -37,6 +38,7 @@ function App() {
             <Route path="/userlog" element={<Login />} />
             <Route path="/usersign" element={<Signup />} />
             <Route path="/cart/:cId" element={<Cart />} />
+
             <Route path="/userprofile/:cId" element={<UserProfile />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/contact" element={<Contact />} />

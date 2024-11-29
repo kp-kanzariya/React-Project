@@ -7,7 +7,7 @@ function UserProfile() {
   const { sharedID, setSharedID } = useContext(userID);
 
   let id=sharedID.id
-
+ 
 
   useEffect(() => {
     fetch(`http://localhost:4444/users/${id}`)
@@ -24,13 +24,14 @@ function UserProfile() {
   //   joined: "January 2021",
   // };
 console.log(user.id)
+console.log(user.img)
   return (
     <Container className="mt-5">
       <Card className="shadow-lg p-3 mb-5 bg-white rounded">
         <Row>
           <Col md={4} className="text-center">
             <img
-              src={user.img}
+              src={user.pic}
               alt="Profile"
               className="img-fluid rounded-circle mb-3"
               style={{ width: "150px", height: "150px", border: "5px solid #4CAF50" }}
@@ -42,10 +43,10 @@ console.log(user.id)
             <Card.Body>
               <h5 className="mb-3 bg-info p-2 rounded">User Information</h5>
               <p>
-                <strong>Email: </strong> {user.email}
+                <strong>Id: </strong> {user.id}
               </p>
               <p>
-                <strong>Id: </strong> {user.id}
+                <strong>Email: </strong> {user.email}
               </p>
               <p>
                 <strong>Phone: </strong> {user.phone}
@@ -57,9 +58,7 @@ console.log(user.id)
                 <strong>Bio: </strong> {user.bio}
               </p>
                 
-              <Button variant="success" className="mt-3">
-                Edit Profile
-              </Button>
+             
             </Card.Body>
           </Col>
         </Row>

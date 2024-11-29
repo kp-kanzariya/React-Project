@@ -1,23 +1,22 @@
 {
   "product": [
     {
-      "id": "1",
       "img": "assets/img/shop_01.jpg",
       "img1": "/assets/img/shop_10.jpg",
       "img2": "/assets/img/shop_06.jpg",
       "img3": "/assets/img/shop_11.jpg",
       "img4": "/assets/img/shop_02.jpg",
       "img5": "/assets/img/shop_01.jpg",
-      "img6": "/assets/img/shop_05.jpg",
       "title": "New Colletion of Shoe",
+      "desc": "Step into sophistication with these black formal oxford-style shoes from Bata. Crafted from premium corrected grain leather, these shoes exude timeless elegance. The TPR sole provides durability and traction, while the lace-up closure ensures a secure fit. Whether you're attending a business meeting or a special occasion, these shoes make a polished statement of style and professionalism. ",
       "brand": "Puma",
+      "sp": "Bata India LimitedCountry of originIndiaMarketed by Bata India Limited 27B, Camac Street, First Floor, Kolkata 700016 West Bengal ",
+      "cnt": "15",
       "price": "250.00",
       "rating": "4.2",
-      "cmt": "42",
-      "desc": "Step into sophistication with these black formal oxford-style shoes from Bata. Crafted from premium corrected grain leather, these shoes exude timeless elegance. The TPR sole provides durability and traction, while the lace-up closure ensures a secure fit. Whether you're attending a business meeting or a special occasion, these shoes make a polished statement of style and professionalism. ",
       "colors": "Black Red",
-      "sp": "Bata India LimitedCountry of originIndiaMarketed by Bata India Limited 27B, Camac Street, First Floor, Kolkata 700016 West Bengal ",
-      "cnt": "15"
+      "cmt": "43",
+      "id": "1"
     },
     {
       "img": "assets/img/shop_02.jpg",

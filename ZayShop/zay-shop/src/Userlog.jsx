@@ -128,6 +128,7 @@ export function Signup() {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [bio, setBio] = useState("");
+  const [pic, setPic] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
@@ -138,7 +139,7 @@ export function Signup() {
     e.preventDefault();
     setError("");
     setSuccess("");
-    const newUser = { email, name, phone, address, bio, password };
+    const newUser = { email, name, phone, address, bio,pic, password };
     fetch("http://localhost:4444/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -262,6 +263,18 @@ export function Signup() {
             id="bio"
             value={bio}
             onChange={(e) => setBio(e.target.value)}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="pic" className="form-label">
+            Pic
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="pic"
+            value={pic}
+            onChange={(e) => setPic(e.target.value)}
           />
         </div>
         {error && <div className="alert alert-danger">{error}</div>}
